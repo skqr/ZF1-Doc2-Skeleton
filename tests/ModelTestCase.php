@@ -23,7 +23,7 @@ class ModelTestCase extends PHPUnit_Framework_TestCase
     	$application->bootstrap();
     	$this->doctrineContainer = Zend_Registry::get('doctrine');
     	$tool = new \Doctrine\ORM\Tools\SchemaTool($this->doctrineContainer->getEntityManager());
-    	$tool->createSchema($this->getClassMetas(APPLCATION_PATH . '/../library/ZC/Entity', 'ZC\Entity\\'));
+    	$tool->createSchema($this->getClassMetas(APPLICATION_PATH . '/../library/ZC/Entity', 'ZC\Entity\\'));
         parent::setUp();
     }
     /**

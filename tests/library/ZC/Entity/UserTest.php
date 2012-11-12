@@ -2,7 +2,7 @@
 /**
  *
  */
-namespace ZC/Entity;
+namespace ZC\Entity;
 /**
  * Tests the functionality implemented in the class.
  * @covers User
