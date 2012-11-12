@@ -6,6 +6,7 @@ namespace ZC\Entity;
 /**
  * 
  * @Table(name="users")
+ * @Entity 
  * @author Javier Lorenzana <javier.lorenzana@gointegro.com>
  */
 class User
