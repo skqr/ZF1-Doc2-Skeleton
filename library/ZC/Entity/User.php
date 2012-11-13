@@ -43,12 +43,12 @@ class User
     {
         if (self::ACCESSOR_PREFIX == substr($method, 0, self::ACCESSOR_PREFIX_LENGTH)) {
             $property = lcfirst(substr($method, self::ACCESSOR_PREFIX_LENGTH));
-            if (property_exists(self, $property)) {
+            if (property_exists($this, $property)) {
                 return $this->$property;
             }
         } elseif (self::MUTATOR_PREFIX == substr($method, 0, self::MUTATOR_PREFIX_LENGTH)) {
             $property = lcfirst(substr($method, self::MUTATOR_PREFIX_LENGTH));
-            if (property_exists(self, $property)) {
+            if (property_exists($this, $property)) {
                 $this->$property = $args[0];
                 return $this;
             }

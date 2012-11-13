@@ -12,10 +12,10 @@ class UserTest extends \ModelTestCase
     /**
      * @covers User::__construct
      */
-    /*public function testCanCreateUser()
+    public function testCanCreateUser()
     {
         $this->assertInstanceOf('ZC\Entity\User', new User());
-    }*/
+    }
 
     /**
      * @covers User::__call
