@@ -27,6 +27,10 @@ class ModelTestCase extends PHPUnit_Framework_TestCase
         self::dropSchema($this->doctrineContainer->getConnection()->getParams());
         $tool = new \Doctrine\ORM\Tools\SchemaTool($this->doctrineContainer->getEntityManager());
         $metas = $this->getClassMetas(APPLICATION_PATH . '/../library/ZC/Entity', 'ZC\Entity\\');
+        var_dump($metas);
+        //$tool->dropSchema($metas, \Doctrine\ORM\Tools\SchemaTool::DROP_DATABASE);
+        //$tool->dropSchema($metas);
+        //$tool->dropDatabase();
         $tool->createSchema($metas);
     }
     /**
@@ -51,7 +55,9 @@ class ModelTestCase extends PHPUnit_Framework_TestCase
      */
     public static function dropSchema($params)
     {
+        var_dump($params);
         if (file_exists($params['path'])) {
+            echo "UNLINKED\n";
             unlink($params['path']);
         }
     }
