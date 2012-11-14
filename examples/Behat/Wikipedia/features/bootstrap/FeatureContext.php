@@ -6,6 +6,7 @@ use Behat\Behat\Context\ClosuredContextInterface,
     Behat\Behat\Exception\PendingException;
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
+use Behat\MinkExtension\Context\MinkContext;
 
 //
 // Require 3rd-party libraries here:
@@ -17,7 +18,7 @@ use Behat\Gherkin\Node\PyStringNode,
 /**
  * Features context.
  */
-class FeatureContext extends BehatContext
+class FeatureContext extends MinkContext
 {
     /**
      * Initializes context.
@@ -41,4 +42,14 @@ class FeatureContext extends BehatContext
 //        doSomethingWith($argument);
 //    }
 //
+
+    /**
+     * @Then /^I wait for the suggestion box to appear$/
+     */
+    public function iWaitForTheSuggestionBoxToAppear()
+    {
+        $this->getSession()->wait(5000,
+            "$('.suggestions-results').children().length > 0"
+        );
+    }
 }
