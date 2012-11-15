@@ -3,14 +3,16 @@
  *
  */
 namespace My\Entity;
+
+require_once 'ModelTestCase.php';
 /**
  * Tests the functionality implemented in the class.
- * @covers User
+ * @covers My\Entity\User
  */
 class UserTest extends \ModelTestCase
 {
     /**
-     * @covers User::__construct
+     *
      */
     public function testCanCreateUser()
     {
@@ -18,7 +20,7 @@ class UserTest extends \ModelTestCase
     }
 
     /**
-     * @covers User::__call
+     * @covers My\Entity\User::__call
      */
     public function testCanSetFirstNameAndLastNameAndRetrieveThem()
     {

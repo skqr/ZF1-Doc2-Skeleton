@@ -107,6 +107,11 @@ class DoctrineContainer
             'cache' => $cacheConfig['instances'],
             'orm'   => $ormConfig['entityManagers']
         );
+
+        // @todo This line and the corresponding use statement should be replaced.
+        // @see http://docs.doctrine-project.org/projects/doctrine-common/en/latest/reference/annotations.html#introduction
+        $annotationDriver = APPLICATION_PATH . "/../vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php";
+        \Doctrine\Common\Annotations\AnnotationRegistry::registerFile($annotationDriver);
     }
 
     /**

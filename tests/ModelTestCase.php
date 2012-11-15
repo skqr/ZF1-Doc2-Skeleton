@@ -16,19 +16,17 @@ class ModelTestCase extends PHPUnit_Framework_TestCase
     protected $doctrineContainer;
     /**
      *
+     * @todo Why do neither $tool->dropSchema($metas) nor $tool->dropDatabase() work with SQLite?
      */
     public function setUp()
     {
-        echo "SETTING UP";
         parent::setUp();
         global $application;
         $application->bootstrap();
         $this->doctrineContainer = Zend_Registry::get('doctrine');
-        // self::dropSchema($this->doctrineContainer->getConnection()->getParams());
+        self::dropSchema($this->doctrineContainer->getConnection()->getParams());
         $tool = new \Doctrine\ORM\Tools\SchemaTool($this->doctrineContainer->getEntityManager());
         $metas = $this->getClassMetas(APPLICATION_PATH . '/../library/My/Entity', 'My\Entity\\');
-        //$tool->dropSchema($metas);
-        //$tool->dropDatabase();
         $tool->createSchema($metas);
     }
     /**
@@ -64,6 +62,6 @@ class ModelTestCase extends PHPUnit_Framework_TestCase
     public function tearDown()
     {
         parent::tearDown();
-        // self::dropSchema($this->doctrineContainer->getConnection()->getParams());
+        self::dropSchema($this->doctrineContainer->getConnection()->getParams());
     }
 }
