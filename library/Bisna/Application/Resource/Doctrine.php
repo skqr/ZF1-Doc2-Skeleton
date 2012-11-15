@@ -63,7 +63,8 @@ class Bisna_Application_Resource_Doctrine extends \Zend_Application_Resource_Res
     {
         $autoloader = \Zend_Loader_Autoloader::getInstance();
         $doctrineIncludePath = isset($config['includePath'])
-            ? $config['includePath'] : APPLICATION_PATH . '/../library/Doctrine';
+            //? $config['includePath'] : APPLICATION_PATH . '/../library/Doctrine';
+            ? $config['includePath'] : APPLICATION_PATH . '/../vendor/doctrine/common/lib/Doctrine/Common';
 
         require_once $doctrineIncludePath . '/Common/ClassLoader.php';
 
