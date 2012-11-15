@@ -564,11 +564,12 @@ class DoctrineContainer
             ) {
                 $annotationReaderClass = $driver['annotationReaderClass'];
                 $annotationReader = new $annotationReaderClass($this->getCacheInstance($driver['annotationReaderCache']));
-                $annotationReader->setDefaultAnnotationNamespace('Doctrine\ORM\Mapping\\');
+                // These reader methods have been deprecated as of the lastest Doctrine version.
+                /*$annotationReader->setDefaultAnnotationNamespace('Doctrine\ORM\Mapping\\');
 
                 foreach ($driver['annotationReaderNamespaces'] as $alias => $namespace) {
                     $annotationReader->setAnnotationNamespaceAlias($namespace, $alias);
-                }
+                }*/
 
                 $nestedDriver = $reflClass->newInstance($annotationReader, $driver['mappingDirs']);
             } else {
