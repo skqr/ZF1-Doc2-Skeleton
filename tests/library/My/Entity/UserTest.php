@@ -2,7 +2,7 @@
 /**
  *
  */
-namespace ZC\Entity;
+namespace My\Entity;
 /**
  * Tests the functionality implemented in the class.
  * @covers User
@@ -14,7 +14,7 @@ class UserTest extends \ModelTestCase
      */
     public function testCanCreateUser()
     {
-        $this->assertInstanceOf('ZC\Entity\User', new User());
+        $this->assertInstanceOf('My\Entity\User', new User());
     }
 
     /**
@@ -31,7 +31,7 @@ class UserTest extends \ModelTestCase
         $em->persist($u);
         $em->flush(); 
         // Then...
-        $users = $em->createQuery("select u from ZC\Entity\User u")->execute();
+        $users = $em->createQuery("select u from My\Entity\User u")->execute();
         $this->assertEquals(1, count($users));
         $this->assertEquals("John", $users[0]->getFirstname());
         $this->assertEquals("Connor", $users[0]->getLastname());
