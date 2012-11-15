@@ -26,6 +26,10 @@ $application = new Zend_Application(
 $bootstrap = $application->bootstrap()->getBootstrap();
 $bootstrap->bootstrap('Doctrine');
 
+// @see http://docs.doctrine-project.org/projects/doctrine-common/en/latest/reference/annotations.html#introduction
+use Doctrine\Common\Annotations\AnnotationRegistry;  
+AnnotationRegistry::registerFile(APPLICATION_PATH . "/../vendor/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php");
+
 // Retrieve Doctrine Container resource
 $container = $application->getBootstrap()->getResource('doctrine');
 

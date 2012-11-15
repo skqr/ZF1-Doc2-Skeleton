@@ -10,7 +10,8 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $u = new My\Entity\User();
+        var_dump($u);
     }
 
 
