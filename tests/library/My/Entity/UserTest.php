@@ -31,7 +31,7 @@ class UserTest extends \ModelTestCase
         $u->setLastname("Connor");
         $em = $this->doctrineContainer->getEntityManager();
         $em->persist($u);
-        $em->flush(); 
+        $em->flush();
         // Then...
         $users = $em->createQuery("select u from My\Entity\User u")->execute();
         $this->assertEquals(1, count($users));
