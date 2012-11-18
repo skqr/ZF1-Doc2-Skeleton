@@ -1,6 +1,6 @@
 <?php
 
-class BackboneExampleController extends Zend_Controller_Action
+class HelloBackboneController extends Zend_Controller_Action
 {
 
     /**
