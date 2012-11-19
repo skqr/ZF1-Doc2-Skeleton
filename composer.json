@@ -10,6 +10,7 @@
     },
     "minimum-stability": "dev",
     "config": {
+        "process-timeout": 3000,
         "bin-dir": "bin/"
     }
 }
