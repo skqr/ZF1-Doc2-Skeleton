@@ -43,7 +43,7 @@ class Bisna_Application_Resource_Doctrine extends \Zend_Application_Resource_Res
         $config = $this->getOptions();
         
         // Bootstrapping Doctrine autoloaders
-        $this->registerAutoloaders($config);
+        // $this->registerAutoloaders($config);
         
         // Starting Doctrine container
         $container = new Container\DoctrineContainer($config);
@@ -62,9 +62,8 @@ class Bisna_Application_Resource_Doctrine extends \Zend_Application_Resource_Res
     private function registerAutoloaders(array $config = array())
     {
         $autoloader = \Zend_Loader_Autoloader::getInstance();
-        /*$doctrineIncludePath = isset($config['includePath'])
+        $doctrineIncludePath = isset($config['includePath'])
             ? $config['includePath'] : APPLICATION_PATH . '/../library/Doctrine';
-            //? $config['includePath'] : APPLICATION_PATH . '/../vendor/doctrine/common/lib/Doctrine';
 
         require_once $doctrineIncludePath . '/Common/ClassLoader.php';
 
@@ -75,11 +74,6 @@ class Bisna_Application_Resource_Doctrine extends \Zend_Application_Resource_Res
         $autoloader->pushAutoloader(array($doctrineExtensionsAutoloader, 'loadClass'), 'DoctrineExtensions');
 
         $doctrineAutoloader = new \Doctrine\Common\ClassLoader('Doctrine');
-        $autoloader->pushAutoloader(array($doctrineAutoloader, 'loadClass'), 'Doctrine');*/
-
-        $composerAutoloader = require_once APPLICATION_PATH. '/../vendor/autoload.php';
-        $autoloader->pushAutoloader(array($composerAutoloader, 'loadClass'), 'Symfony');
-        $autoloader->pushAutoloader(array($composerAutoloader, 'loadClass'), 'DoctrineExtensions');
-        $autoloader->pushAutoloader(array($composerAutoloader, 'loadClass'), 'Doctrine');
+        $autoloader->pushAutoloader(array($doctrineAutoloader, 'loadClass'), 'Doctrine');
     }
 }
