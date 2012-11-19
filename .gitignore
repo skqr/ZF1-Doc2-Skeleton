@@ -4,3 +4,11 @@ README.txt
 demos/
 extras/documentation
 
+# Composer
+composer.phar
+composer.lock
+vendor
+
+# PHPUnit
+tests/log
+tests/data/test.db
