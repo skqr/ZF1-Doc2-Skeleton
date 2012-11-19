@@ -44,6 +44,27 @@
             <viewFiltersDirectory/>
           </viewsDirectory>
         </moduleDirectory>
+        <moduleDirectory moduleName="examples">
+          <apisDirectory enabled="false"/>
+          <configsDirectory enabled="false"/>
+          <controllersDirectory>
+            <controllerFile controllerName="EmberJs">
+              <actionMethod actionName="index"/>
+            </controllerFile>
+          </controllersDirectory>
+          <formsDirectory enabled="false"/>
+          <layoutsDirectory enabled="false"/>
+          <modelsDirectory/>
+          <viewsDirectory>
+            <viewScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="EmberJs">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+            </viewScriptsDirectory>
+            <viewHelpersDirectory/>
+            <viewFiltersDirectory/>
+          </viewsDirectory>
+        </moduleDirectory>
       </modulesDirectory>
       <viewsDirectory>
         <viewScriptsDirectory>
@@ -98,6 +119,13 @@
                 <testApplicationActionMethod forActionName="index"/>
               </testApplicationControllerFile>
               <testApplicationControllerFile forControllerName="User">
+                <testApplicationActionMethod forActionName="index"/>
+              </testApplicationControllerFile>
+            </testApplicationControllerDirectory>
+          </testApplicationModuleDirectory>
+          <testApplicationModuleDirectory forModuleName="examples">
+            <testApplicationControllerDirectory>
+              <testApplicationControllerFile forControllerName="EmberJs">
                 <testApplicationActionMethod forActionName="index"/>
               </testApplicationControllerFile>
             </testApplicationControllerDirectory>
