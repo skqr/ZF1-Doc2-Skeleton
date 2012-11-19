@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity 
  * @author Javier Lorenzana <javier.lorenzana@gointegro.com>
  */
-class User
+class User implements \JsonSerializable
 {
     const ACCESSOR_PREFIX = 'get';
     const ACCESSOR_PREFIX_LENGTH = 3;
@@ -56,5 +56,18 @@ class User
                 return $this;
             }
         }
+    }
+
+    /**
+     *
+     * @see \JsonSerializable
+     */
+    public function jsonSerialize()
+    {
+        $popo = new \stdClass();
+        foreach ($this as $property => $value) {
+            $popo->$property = $value;
+        }
+        return $popo;
     }
 }
