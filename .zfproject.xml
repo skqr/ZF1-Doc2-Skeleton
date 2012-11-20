@@ -51,6 +51,9 @@
             <controllerFile controllerName="EmberJs">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="BackboneJs">
+              <actionMethod actionName="index"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory enabled="false"/>
           <layoutsDirectory enabled="false"/>
@@ -58,6 +61,9 @@
           <viewsDirectory>
             <viewScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="EmberJs">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="BackboneJs">
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
@@ -126,6 +132,9 @@
           <testApplicationModuleDirectory forModuleName="examples">
             <testApplicationControllerDirectory>
               <testApplicationControllerFile forControllerName="EmberJs">
+                <testApplicationActionMethod forActionName="index"/>
+              </testApplicationControllerFile>
+              <testApplicationControllerFile forControllerName="BackboneJs">
                 <testApplicationActionMethod forActionName="index"/>
               </testApplicationControllerFile>
             </testApplicationControllerDirectory>
