@@ -67,7 +67,6 @@ class Api_UserController extends Zend_Rest_Controller
         
         $user = $this->userRepository->getUser($id);
         if (!empty($user)) {
-
             $rawBody = $this->getRequest()->getRawBody();
             $popo = Zend_Json::decode($rawBody);
             $user = $this->userRepository->update($popo, $user);
