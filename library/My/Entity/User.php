@@ -9,7 +9,13 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * 
  * @ORM\Table(name="users")
- * @ORM\Entity 
+ * @ORM\Entity(repositoryClass="My\Repository\UserRepository")
+ * 
+ * @method User setFirstname(string $firstname) Sets firstname
+ * @method User setLastname(string $lastname) Sets lastname
+ * @method string getFirstname() Gets lastname
+ * @method string getLastname() Sets lastname
+ * 
  * @author Javier Lorenzana <javier.lorenzana@gointegro.com>
  */
 class User implements \JsonSerializable
